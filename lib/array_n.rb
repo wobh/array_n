@@ -1,5 +1,5 @@
 require "array_n/version"
 
-module ArrayN
+class ArrayN
   # Your code goes here...
 end

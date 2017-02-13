@@ -1,3 +1,3 @@
-module ArrayN
+class ArrayN
   VERSION = "0.1.0"
 end

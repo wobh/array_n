@@ -2,6 +2,8 @@
 
 Multidimensional Arrays in Ruby.
 
+[![Build Status](https://travis-ci.org/wobh/array_n.svg?branch=master)](https://travis-ci.org/wobh/array_n)
+
 A simple class that provides multidimensional readers and accessors to
 what is, internally, a flat array.
 

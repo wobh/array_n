@@ -12,7 +12,7 @@ class ArrayN
   attr_reader :dimensions
 
   def each
-    yield @elements
+    @elements.each { |e| yield e }
   end
 
   def length

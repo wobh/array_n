@@ -23,7 +23,68 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize with dimensions of array:
+
+```ruby
+3dary = ArrayN.new(2, 3, 5)
+```
+
+Use a block to set array values:
+
+```ruby
+3dary = ArrayN.new(2, 3, 5) { |n| n + 1 }
+```
+
+Get number of elements of the array with `#length` or `#size`:
+
+```ruby
+3dary.length #=> [2, 3, 5]
+```
+
+Get the dimensionality of the array with `#rank`:
+
+```ruby
+3dary.rank #=> 3
+```
+
+Find out if an array of subscripts is valid with `#in_bounds?`:
+
+```ruby
+3dary.in_bounds?(0, 1, 3) #=> true
+```
+
+Find the corresponding index of array coordinates with
+`#row_major_index`:
+
+```ruby
+3dary.row_major_index(0, 1, 3) #=> 8
+```
+
+Fetch an element of the array with `#fetch`:
+
+```ruby
+3dary.fetch(0, 1, 3) #=> 9
+```
+
+Store an element to the array with `#store`:
+
+```ruby
+3dary.store(:foo, 0, 1, 3) #=> :foo
+```
+
+Return equivalent nested array with `.to_a`:
+
+```ruby
+3dary.to_a #=> [[[1, 2, 3, 4, 5],
+           #     [6, 7, 8, :foo, 10],
+           #     [11, 12, 13, 14, 15]],
+           #    [[16, 17, 18, 19, 20],
+           #     [21, 22, 23, 24, 25],
+           #     [26, 27, 28, 29, 30]]]
+```
+
+`ArrayN` includes `Enumerable` and implements an `#each`, so instances
+can be used more-or-less like any other.
 
 ## Development
 
